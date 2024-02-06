@@ -9,7 +9,7 @@ RUN apt-get update -qq && apt-get install -y \
 
 WORKDIR /menu/app
 
-RUN gem install bundler
+RUN gem install bundler:2.3.14
 
 COPY Gemfile* ./
 
