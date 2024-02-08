@@ -130,6 +130,7 @@ GEM
     nokogiri (1.16.0-x86_64-darwin)
       racc (~> 1.4)
     pg (1.5.4)
+    prometheus-client (4.2.2)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -224,6 +225,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg
+  prometheus-client
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   selenium-webdriver
