@@ -1,0 +1,17 @@
+<h1>Ingredients</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
