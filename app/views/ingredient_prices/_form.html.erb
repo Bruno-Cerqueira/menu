@@ -1,0 +1,32 @@
+<%= form_with(model: @ingredient_price, local: true) do |form| %>
+  <% if @ingredient_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ingredient_price.errors.count, "error") %> prohibited this ingredient_price from being saved:</h2>
+
+      <ul>
+      <% @ingredient_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ingredient_id %>
+    <%= form.collection_select :ingredient_id, Ingredient.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_field :source %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
