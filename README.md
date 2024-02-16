@@ -30,6 +30,10 @@ This is a Rails project template that utilizes Docker Compose for easy setup and
 
 `docker exec -it <Name of rails container running> rails db:migrate`
 
+If there is a new migration created, it is needed to update the schema with the next command.
+
+`docker cp menu-web-1:/menu/app/db/schema.rb ./db/schema.rb`
+
 3. Update schema locally
 
 `docker cp <Name of rails container running>:/menu/app/db/schema.rb ./db/schema.rb`
@@ -41,6 +45,14 @@ This is a Rails project template that utilizes Docker Compose for easy setup and
 1. Prometheus is configured to scrape metrics from the Rails application. You can access the Prometheus dashboard at `http://localhost:9090`.
 
 2. You can configure alerts and graphs based on the collected metrics.
+
+## Run tests
+
+1. Ensure db test is up and updated.
+
+2. Run command for testing.
+
+`docker exec -it ${rails container name} rails test`
 
 ## Stopping the Application
 
