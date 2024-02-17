@@ -1,0 +1,74 @@
+.git
+.gitignore
+.gitattributes
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/master.key
+
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+### Ruby ###
+*.gem
+/.config
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# FUTURE MAYBE
+## Environment normalization:
+#/.bundle
+#/vendor/bundle
+
+# if using bower-rails ignore default bower_components path bower.json files
+#/vendor/assets/bower_components
+#*.bowerrc
+#bower.json
+
+# Ignore Byebug command history file.
+#.byebug_history
+
+# Ignore node_modules
+#node_modules/
+
+# Ignore precompiled javascript packs
+#/public/packs
+#/public/packs-test
+#/public/assets
+
+### Rails ###
+#*.rbc
+#capybara-*.html
+#.rspec
+#/public/system
+#/coverage/
+#/spec/tmp
+#rerun.txt
+#pickle-email-*.html

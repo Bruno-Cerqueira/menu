@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM ruby:3.1.2
 
 RUN apt-get update -qq && apt-get install -y \
@@ -7,15 +9,17 @@ RUN apt-get update -qq && apt-get install -y \
     nodejs \
     postgresql-client
 
-WORKDIR /menu/app
+ENV BASEDIR=/menu
+
+WORKDIR ${BASEDIR}
 
 RUN gem install bundler:2.3.14
 
-COPY Gemfile* ./
+COPY Gemfile* ${BASEDIR}
 
 RUN bundle install
 
-ADD . /menu/app
+ADD . ${BASEDIR}
 
 EXPOSE 3000
 
