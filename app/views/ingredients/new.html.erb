@@ -1,18 +1,23 @@
 <%= form_with model: @ingredient do |form| %>
+  <div class="field">
+    <%= form.label :id, 'Choose Existing Ingredient' %>
+    <%= form.select :id, options_for_select(Ingredient.all.map { |i| [i.name, i.id] }), include_blank: 'Select an existing ingredient' %>
+  </div>
+
+  <div id="new_ingredient_fields">
     <div class="field">
-        <%= form.label :name %>
-        <%= form.text_field :name %>
+      <%= form.label :name, 'Or Enter New Ingredient Name' %>
+      <%= form.text_field :name %>
     </div>
+  </div>
     Preços:
     <ul>
       <%= form.fields_for :ingredient_prices do |ingredient_prices_form| %>
         <li>
-          <%= ingredient_prices_form.check_box :_destroy %>
           <%= ingredient_prices_form.label :price %>
           <%= ingredient_prices_form.number_field :price %>
         </li>
         <li>
-          <%= ingredient_prices_form.check_box :_destroy %>
           <%= ingredient_prices_form.label :source %>
           <%= ingredient_prices_form.text_field :source %>
         </li>
