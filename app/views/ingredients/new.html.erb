@@ -1,0 +1,24 @@
+<%= form_with model: @ingredient do |form| %>
+    <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+    Preços:
+    <ul>
+      <%= form.fields_for :ingredient_prices do |ingredient_prices_form| %>
+        <li>
+          <%= ingredient_prices_form.check_box :_destroy %>
+          <%= ingredient_prices_form.label :price %>
+          <%= ingredient_prices_form.number_field :price %>
+        </li>
+        <li>
+          <%= ingredient_prices_form.check_box :_destroy %>
+          <%= ingredient_prices_form.label :source %>
+          <%= ingredient_prices_form.text_field :source %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+  <% end %>

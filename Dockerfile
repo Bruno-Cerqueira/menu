@@ -1,6 +1,11 @@
 # syntax=docker/dockerfile:1
 
-FROM ruby:3.1.2
+ARG CODE_VERSION=3.1.2
+FROM ruby:${CODE_VERSION}
+
+LABEL version="0.1"
+LABEL description="Menu project to practice docker \
+and rails"
 
 RUN apt-get update -qq && apt-get install -y \
     build-essential \
