@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class IngredientsControllerTest < ActionDispatch::IntegrationTest
   def setup
@@ -6,7 +6,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     @ingredient2 = ingredients(:ingredient2)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get '/ingredients'
     assert_response :success
     assert_not_nil assigns(:ingredients)
