@@ -1,4 +1,5 @@
 class IngredientPricesController < ApplicationController
+  before_action :set_ingredient
     def new
         @ingredient_price = IngredientPrice.new
       end
@@ -16,5 +17,9 @@ class IngredientPricesController < ApplicationController
     
       def ingredient_price_params
         params.require(:ingredient_price).permit(:ingredient_id, :price, :source)
+      end
+
+      def set_ingredient
+        @ingredients = Ingredient.all
       end
 end

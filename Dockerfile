@@ -15,17 +15,18 @@ RUN apt-get update -qq && apt-get install -y \
     postgresql-client
 
 ENV BASEDIR=/menu
+ENV PORT=3000
 
 WORKDIR ${BASEDIR}
 
 RUN gem install bundler:2.3.14
 
-COPY Gemfile* ${BASEDIR}
+COPY Gemfile* .
 
 RUN bundle install
 
-ADD . ${BASEDIR}
+ADD . .
 
-EXPOSE 3000
+EXPOSE $PORT
 
 CMD ["rails", "server", "-b", "0.0.0.0"]

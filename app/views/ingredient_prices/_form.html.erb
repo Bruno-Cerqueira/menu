@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :ingredient_id %>
-    <%= form.collection_select :ingredient_id, Ingredient.all, :id, :name, prompt: true %>
+    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, prompt: true %>
   </div>
 
   <div class="field">
