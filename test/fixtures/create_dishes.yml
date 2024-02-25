@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Baked potato
+  description: Add a potato to the oven 180 for 30 minutes.
+
+two:
+  name: Fried eggs
+  description: Add egg to fry in a hot pan for 5 minutes.
