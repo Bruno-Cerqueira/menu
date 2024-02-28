@@ -11,8 +11,8 @@ development:
   <<: *default
   encoding: unicode
   database: db_menu_dev
-  username: postgres
-  password: postgres
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
