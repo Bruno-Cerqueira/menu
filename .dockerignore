@@ -72,3 +72,5 @@ config/master.key
 #/spec/tmp
 #rerun.txt
 #pickle-email-*.html
+/reports
+/scripts

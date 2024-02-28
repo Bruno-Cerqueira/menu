@@ -57,3 +57,9 @@ If there is a new migration created, it is needed to update the schema with the 
 ## Stopping the Application
 
 To stop the application and shut down the Docker containers, press `Ctrl + C` in the terminal where *docker compose up* is running.
+
+## Check other
+
+### Security vulnerabilitys
+
+- brakeman -c scripts/brakeman.yml
