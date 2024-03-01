@@ -36,7 +36,7 @@ If there is a new migration created, it is needed to update the schema with the 
 
 3. Update schema locally
 
-`docker cp <Name of rails container running>:/menu/app/db/schema.rb ./db/schema.rb`
+`docker cp <Name of rails container running>:/app/db/schema.rb ./db/schema.rb`
 
 4. Access the Rails application in your web browser at `http://localhost:3000`.
 
