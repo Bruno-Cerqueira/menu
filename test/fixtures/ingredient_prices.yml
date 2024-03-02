@@ -1,0 +1,9 @@
+one:
+  ingredient: ingredient1
+  price: 5
+  source: Local Market
+  
+two:
+  ingredient: ingredient2
+  price: 3
+  source: Grocery Store

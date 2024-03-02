@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  dish: one
-  ingredient: one
+ingredientUsage1:
+  dish: dish1
+  ingredient: ingredient1
   quantity: 1
   unit_of_measure: MyString
 
-two:
-  dish: two
-  ingredient: two
+ingredientUsage2:
+  dish: dish2
+  ingredient: ingredient1
   quantity: 1
   unit_of_measure: MyString
