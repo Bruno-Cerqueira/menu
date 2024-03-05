@@ -1,1 +1,8 @@
 inherit_from: .rubocop_todo.yml
+
+# Exclude specific files
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
