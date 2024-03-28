@@ -1,17 +1,24 @@
-<h1>Ingredients</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @ingredients.available.each do |ingredient| %>
+<main class="flex flex-col gap-4">
+  <h1>Ingredients</h1>
+  <%= turbo_frame_tag 'ingredient_frame' do %>
+    <div>
+      <%= link_to "Add new ingredient", new_ingredient_path, method: :get, class: "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" %>
+    </div>
+  <% end %>
+  <table>
+    <thead>
       <tr>
-        <td><%= ingredient.name %></td>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @ingredients.available.each do |ingredient| %>
+        <tr>
+          <td><%= ingredient.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>
