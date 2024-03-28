@@ -1,0 +1,4 @@
+one:
+    quantity: 0
+    ingredient: ingredient1
+    measurement_type: "gramas"
