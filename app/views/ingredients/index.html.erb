@@ -13,8 +13,8 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-    <tbody>
-      <% @ingredients.available.each do |ingredient| %>
+    <tbody id="ingredients_table">
+      <% @ingredients.each do |ingredient| %>
         <tr>
           <td><%= ingredient.name %></td>
         </tr>

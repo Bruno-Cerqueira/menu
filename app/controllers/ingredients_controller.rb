@@ -9,16 +9,16 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    if ingredient_params[:id].present?
-      @ingredient = Ingredient.find(ingredient_params[:id])
-    elsif @ingredient = Ingredient.create!(name: ingredient_params[:name])
-    end
-    @ingredient_price = @ingredient.ingredient_prices.build(ingredient_params[:ingredient_prices_attributes][0])
+    @ingredient = Ingredient.new(name: ingredient_params[:name])
 
-    if @ingredient.save!
-      format.html { redirect_to(ingredients_url, notice: '#{ingredient.name} added.') }
-    else
-      render :new
+    respond_to do |format|
+      if @ingredient.save!
+        format.turbo_stream { render turbo_stream: turbo_stream.append('ingredients_table', partial: 'ingredient_created', locals: { ingredient: @ingredient}) }
+        format.html { redirect_to(ingredients_url, notice: '#{ingredient.name} added.') }
+      else
+        # TODO: respond notice
+        render :new
+      end
     end
   end
 
