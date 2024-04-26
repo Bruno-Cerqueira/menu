@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_27_224831) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_26_022036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_27_224831) do
     t.string "unit_of_measure"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dish_id", "ingredient_id"], name: "unique_dish_and_ingredient", unique: true
     t.index ["dish_id"], name: "index_ingredient_usages_on_dish_id"
     t.index ["ingredient_id"], name: "index_ingredient_usages_on_ingredient_id"
   end
