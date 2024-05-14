@@ -12,12 +12,12 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(name: ingredient_params[:name])
 
     respond_to do |format|
-      if @ingredient.save!
+      if @ingredient.save
         format.turbo_stream { render turbo_stream: turbo_stream.append('ingredients_table', partial: 'ingredient_created', locals: { ingredient: @ingredient}) }
         format.html { redirect_to(ingredients_url, notice: '#{ingredient.name} added.') }
       else
         # TODO: respond notice
-        render :new
+        format.html { render :new, status: 422 }
       end
     end
   end
