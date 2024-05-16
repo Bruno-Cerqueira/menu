@@ -4,6 +4,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
+    flash[:notice] = "Adicione ingrediente."
     @ingredient = Ingredient.new
     @ingredient.ingredient_prices.build
   end

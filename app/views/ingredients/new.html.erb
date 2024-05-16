@@ -5,4 +5,10 @@
       <%= form.submit "Submit", class: "absolute inset-y-0 right-0 px-4 py-2 bg-indigo-500 text-white rounded-r-md hover:bg-indigo-600 focus:outline-none" %>
     </div>
   <% end %>
+  <!-- Showing flash -->
+  <% if notice.present? %>
+    <%= turbo_stream.replace "notices" do %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+  <% end %>
 <% end %>
