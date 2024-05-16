@@ -4,7 +4,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
-    flash[:notice] = "Adicione ingrediente."
+    flash[:notice] = 'Adicione ingrediente.'
     @ingredient = Ingredient.new
     @ingredient.ingredient_prices.build
   end
@@ -14,7 +14,10 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.turbo_stream { render turbo_stream: turbo_stream.append('ingredients_table', partial: 'ingredient_created', locals: { ingredient: @ingredient}) }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.append('ingredients_table', partial: 'ingredient_created',
+                                                                        locals: { ingredient: @ingredient })
+        end
         format.html { redirect_to(ingredients_url, notice: '#{ingredient.name} added.') }
       else
         # TODO: respond notice

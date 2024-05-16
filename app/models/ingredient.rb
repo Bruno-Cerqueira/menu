@@ -8,5 +8,4 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   scope :available, -> { joins(:ingredient_quantities).where('ingredient_quantities.quantity > 0') }
-
 end
